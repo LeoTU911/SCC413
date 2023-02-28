@@ -11,12 +11,8 @@ The script supports continue/resume training. Use '--continue_train' to resume y
 Example:
     Train a CycleGAN model:
         python train.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
-    Train a pix2pix model:
-        python train.py --dataroot ./datasets/facades --name facades_pix2pix --model pix2pix --direction BtoA
 
 See options/base_options.py and options/train_options.py for more training options.
-See training and test tips at: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/docs/tips.md
-See frequently asked questions at: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/docs/qa.md
 """
 import time
 from options.train_options import TrainOptions
@@ -77,4 +73,4 @@ if __name__ == '__main__':
 
         print('End of epoch %d / %d \t Time Taken: %d sec' % (epoch, opt.n_epochs + opt.n_epochs_decay, time.time() - epoch_start_time))
         
-    joblib.dump(model, 'trained_model/cycleGAN.pkl')
+    joblib.dump(model, './results/cycleGAN.pkl')
