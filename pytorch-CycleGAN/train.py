@@ -19,7 +19,6 @@ from options.train_options import TrainOptions
 from data import create_dataset
 from models import create_model
 from util.visualizer import Visualizer
-import joblib
 
 if __name__ == '__main__':
     opt = TrainOptions().parse()   # get training options
@@ -73,4 +72,3 @@ if __name__ == '__main__':
 
         print('End of epoch %d / %d \t Time Taken: %d sec' % (epoch, opt.n_epochs + opt.n_epochs_decay, time.time() - epoch_start_time))
         
-    joblib.dump(model, './results/cycleGAN.pkl')
